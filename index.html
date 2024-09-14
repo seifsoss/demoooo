@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Changed to flex-start to allow scrolling */
+            width: 100vw;
+            height: 100vh;
+            background-color: #f8f9fa;
+            font-family: 'Open Sans', sans-serif;
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        #codepen {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px; /* Added padding to prevent content from being too close to the edges */
+        }
+
+        .card {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-text {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-bottom: 16px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+        }
+
+        .btnn {
+            background-color: #fa5b30;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .btnn:hover {
+            background-color: #e03e1b;
+        }
+
+        .btn-secondary {
+            font-size: 0.875rem;
+            padding: 8px 16px;
+        }
+
+        .plus-btn {
+            width: 100%;
+            max-width: 300px;
+            height: 373px; /* Match card height */
+            border-radius: 12px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            align-self: center;
+        }
+
+        .plus-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .card,
+            .plus-btn {
+                max-width: 100%;
+            }
+        }
+        /* Style for the navbar */
+.navbar {
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-left: 10px; /* Adjust padding to align with other items */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 15px; /* Ensure same padding for nav links */
+}
+
+.navbar-toggler {
+    border: none;
+    color: white;
+}
+
+.form-control {
+    width: 200px;
+}
+
+.form-inline {
+    margin-left: auto; /* Push the search form to the right */
+}
+
+.btn-outline-light {
+    color: white;
+    border-color: white;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: #007bff;
+}
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px; /* Keeps content away from the edges */
+    margin-top: 70px; /* Adjust this value depending on your navbar height */
+}
+.navbar{
+    margin: 20px 100px;
+}
+
+    </style>
+    
+</head>
+
+<body>
+   
+    
+    <div id="codepen"><nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./logo.jpeg" alt="" width="50" height="40">
+              </a>
+          <a class="navbar-brand" href="#">EGYLIFTS</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">license</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Docs</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="#" id="loginBtn">Login</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" id="auth">View Only</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav></div>
+
+    <!-- Ensure Bootstrap JS is included -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        if (window.localStorage.elvNo == 0) {
+            window.localStorage.elvNo = 5;
+        }
+        var cards_cont = document.getElementById('codepen');
+
+        for (let i = 1; i <= window.localStorage.elvNo; i++) {
+            cards_cont.innerHTML += `
+                <div class="card">
+                    <img src="ELV.jpg" alt="Product Image" />
+                    <div class="card-body">
+                        <h2 class="card-title">Elevator ${i}</h2>
+                        <p id="labele${i}" class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btnn" data-bs-toggle="modal" data-bs-target="#modalElevator${i}" id="btn${i}">Change Its Type Now</button>
+                        <button type="button" class="btn btn-secondary" id="btne${i}">STATUS</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalElevator${i}" tabindex="-1" aria-labelledby="modalElevator${i}Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalElevator${i}Label">Elevator ${i} Type</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <select class="form-select" id="elv${i}">
+                                    <option selected value="0">Update State</option>
+                                    <option value="1">In service - في الخدمة</option>
+                                    <option value="2">Failure - حالة عطل</option>
+                                    <option value="3">Maintenance - صيانة</option>
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="saveChanges(${i})">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+
+            const nowCard = localStorage.getItem(`as${i}`);
+            if (nowCard == '1') {
+                var btn = document.getElementById(`btne${i}`);
+                btn.className = "btn btn-success";
+                var labell = document.getElementById(`labele${i}`);
+                labell.innerHTML = "In service - في الخدمة";
+            }
+            if (nowCard == '3') {
+                var btn = document.getElementById(`btne${i}`);
+                btn.className = "btn btn-primary";
+                var labell = document.getElementById(`labele${i}`);
+                labell.innerHTML = "Maintenance - صيانة";
+            }
+            if (nowCard == '2') {
+                var btn = document.getElementById(`btne${i}`);
+                btn.className = "btn btn-danger";
+                var labell = document.getElementById(`labele${i}`);
+                labell.innerHTML = "Failure - حالة عطل";
+            }
+        }
+
+        // Add the plus button after the cards
+        var plusBtn = document.createElement('button');
+        plusBtn.className = 'plus-btn';
+        plusBtn.id = 'Plus_btn';
+
+        // Add a click event listener to the plus button
+        plusBtn.addEventListener('click', function() {
+            var x = parseInt(window.localStorage.elvNo) + 1;
+            window.localStorage.elvNo = x;
+            location.reload(); // Reload the page to display the new card
+        });
+        plusBtn.innerHTML = '+';
+        cards_cont.appendChild(plusBtn);
+
+        function saveChanges(id) {
+            localStorage.setItem(`as${id}`, document.getElementById(`elv${id}`).value);
+            location.reload();
+        }
+
+
+
+
+
+        if(window.localStorage.logged == "true"){
+            console.log("hi")
+            var loginBtn = document.getElementById('loginBtn')
+            loginBtn.innerHTML = "logout"
+            
+            var auth = document.getElementById('auth')
+            auth.innerHTML = "Edit && View"
+        }
+        if(window.localStorage.logged != "true" ){
+            for (let i = 1; i <= window.localStorage.elvNo; i++) {
+            document.getElementById(`btn${i}`).disabled = true;
+            }
+        }
+        document.getElementById("loginBtn").addEventListener("click", function() {
+            if(document.getElementById("loginBtn").innerHTML == "logout"){
+                window.localStorage.logged = "false"
+                location.reload()
+            }
+            if(document.getElementById("loginBtn").innerHTML == "Login"){
+                window.location.href = "./login.html";
+            }
+        });
+    </script>
+</body>
+
+</html>
